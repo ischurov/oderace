@@ -5,9 +5,10 @@ Some ODE solvers benchmarks
 The following differential equation is used as a testcase:
 
 x'=cos(x)+cos(y)+a,
+
 y'=eps,
 
-where a=1.5
+where a=1.4
 
 If eps is small, it is an example of the so-called slow-fast equation. One is interested in the Poincare map from x=0 to x=2pi (so the time is 2pi/eps).
 
@@ -41,5 +42,6 @@ Wall time: 0.13 s
 === Contacts ===
 
 More details: http://ivoyager.livejournal.com/tag/oderace
+
 More contacts: http://ilya.schurov.com/
 
