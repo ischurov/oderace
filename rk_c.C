@@ -54,10 +54,11 @@ vector <double> Xdot(vector <double> X, double t, void* param)
     ret(1)=*eps_p;
     return ret;
 }
-
+//show the trajectory (to doublecheck that solver works ok)
+#define SHOWTRAJ
 main()
 {
-    double eps=0.01;
+    double eps=0.1;
     double prec=1.4E-8;
     vector<double> X(2);
     int rk_steps=10;
@@ -65,7 +66,7 @@ main()
     double timer;
     double oldx;
     bool first=true;
-    int iterates=100;
+    int iterates=1000;
     int i;
     int trajpoints=100;
     int trajstep;
@@ -101,7 +102,7 @@ main()
     }
     timer=get_time()-timer;
 
-    std::cout << "#For x0 = 0, eps = " << eps << " and precision is " << prec << ", X(2pi) = " << X(0) << " and the execution time is " << timer << " with " << rk_steps << " steps and " << iterates << " iterations" << std::endl;
+#ifdef SHOWTRAJ
     trajstep=int(double(rk_steps)/trajpoints);
     X(0)=0;
     X(1)=0;
@@ -110,6 +111,7 @@ main()
 	X=rk_solve(0,2*M_PI/eps/trajpoints,X,Xdot,&eps,trajstep);
 	std::cout << X(1) << " " << X(0) << std::endl;
     }
-
+#endif
+    std::cout << "#The time is " << timer << std::endl << "#For x0 = 0, eps = " << eps << " and precision is " << prec << ", X(2pi) = " << X(0) << " with " << rk_steps << " steps and " << iterates << " iterations" << std::endl;
     return 0;
 } 
