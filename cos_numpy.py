@@ -1,4 +1,4 @@
-from scipy import cos
+from numpy import cos
 from time import time
 
 def docycle(iterations=100000000): 

@@ -68,7 +68,7 @@ main()
     bool first=true;
     int iterates=1000;
     int i;
-    int trajpoints=100;
+    int trajpoints=700;
     int trajstep;
     for(;;)
     {
