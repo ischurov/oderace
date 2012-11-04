@@ -14,11 +14,11 @@ If eps is small, it is an example of the so-called slow-fast equation. One is in
 
 == Implementations ==
 
-=== rk_C ===
+=== rk_c ===
 
-rk_c.C is a simple C++ implementation of RK4 method (see http://en.wikipedia.org/wiki/Runge-Kutta for details). 
+rk_c.cpp is a simple C++ implementation of RK4 method (see http://en.wikipedia.org/wiki/Runge-Kutta for details). 
 
-g++ rk_c.C -o rk_c && ./rk_c
+g++ rk_c.cpp -o rk_c && ./rk_c
 
 Note that only 'wall time' is calculated.
 
